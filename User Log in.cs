@@ -19,10 +19,7 @@ namespace VotingApp_1._0
 
         private void btn_Register_Click(object sender, EventArgs e)
         {
-            //Opens the Registration form and close user login form. 
-            var userRegistraion = new form_Registration();
-            userRegistraion.Show();
-            //this.Close();        //closes the current form
+            
         }
     }
 }
