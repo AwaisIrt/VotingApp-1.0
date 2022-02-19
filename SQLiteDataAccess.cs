@@ -8,12 +8,27 @@ using System.Data;
 using System.Data.SQLite;
 using Dapper;
 
+
 namespace VotingApp
 {
-    internal class SQLiteDataAccess
+    class SQLiteDataAccess
     {
+        public static void sqlUserSignin()
+        {
+            string sqlQuery = "select * from User";
+            SQLiteConnection sqlConn = new SQLiteConnection(LoadConnectionString());
+            sqlConn.Open();
+            SQLiteCommand sqlCmd = new SQLiteCommand(sqlQuery);
+
+            SQLiteDataAdapter sqlDa = new SQLiteDataAdapter(sqlCmd);
+            DataTable dataTable = new DataTable();
+            sqlDa.Fill(dataTable);
+        }
+        
+        
         public static List<User> LoadUsers()
         {
+            
            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
            {
                 var output = cnn.Query<User>("select * from User", new DynamicParameters());
@@ -22,14 +37,16 @@ namespace VotingApp
            }
        
         }
-        public static void RegisterUser(User UserRegistration)
+        public static void RegisterUser(User UserLogin)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into User(FirstName, LastName) values (@FirstName, @LastName)", UserRegistration);
+                cnn.Execute("insert into User(FirstName, LastName) values (@FirstName, @LastName)", UserLogin);
             }
         }
-        private static string LoadConnectionString(string id = "Default")
+        
+
+        public static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
