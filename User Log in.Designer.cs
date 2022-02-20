@@ -34,6 +34,7 @@
             this.txt_Username = new System.Windows.Forms.TextBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.btn_SignIn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_signIn
@@ -101,12 +102,21 @@
             this.btn_SignIn.UseVisualStyleBackColor = false;
             this.btn_SignIn.Click += new System.EventHandler(this.btn_SignIn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1222, 301);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 32);
+            this.label1.TabIndex = 6;
+            // 
             // form_UserLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1618, 882);
+            this.ClientSize = new System.Drawing.Size(1742, 882);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_SignIn);
             this.Controls.Add(this.txt_Password);
             this.Controls.Add(this.txt_Username);
@@ -128,6 +138,7 @@
         private System.Windows.Forms.TextBox txt_Username;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.Button btn_SignIn;
+        private System.Windows.Forms.Label label1;
     }
 }
 
