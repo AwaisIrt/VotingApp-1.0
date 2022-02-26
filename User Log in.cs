@@ -79,7 +79,7 @@ namespace VotingApp_1._0
                     {
                         str_UserType = sqlDr.GetValue(2).ToString();
                       
-                        if (str_UserType == "Admin" || str_UserType == "admin")
+                        if (str_UserType == "1")
                         {
                             AdminForm form2 = new AdminForm();
                             form2.Show();
@@ -87,13 +87,13 @@ namespace VotingApp_1._0
                         }
                         else
                         {
-                            if (str_UserType == "Voter" || str_UserType == "voter" || str_UserType == null)
+                            if (str_UserType == "2"|| str_UserType == null)
                             {
                                 VoterForm form3 = new VoterForm();
                                 form3.Show();
                                 this.Hide();
                             }
-                            else if (str_UserType == "Auditor" || str_UserType == "auditor")
+                            else if (str_UserType == "3")
                             {
                                 AuditorForm form4 = new AuditorForm();
                                 form4.Show();

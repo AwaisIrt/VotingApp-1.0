@@ -41,11 +41,11 @@
             // 
             this.lbl_signIn.AutoSize = true;
             this.lbl_signIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_signIn.Location = new System.Drawing.Point(586, 96);
+            this.lbl_signIn.Location = new System.Drawing.Point(500, 103);
             this.lbl_signIn.Name = "lbl_signIn";
-            this.lbl_signIn.Size = new System.Drawing.Size(372, 61);
+            this.lbl_signIn.Size = new System.Drawing.Size(688, 61);
             this.lbl_signIn.TabIndex = 0;
-            this.lbl_signIn.Text = "Sign in to vote";
+            this.lbl_signIn.Text = "Welcome to the Voting Hub";
             this.lbl_signIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_signIn.UseMnemonic = false;
             // 
@@ -55,9 +55,9 @@
             this.lbl_UserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_UserID.Location = new System.Drawing.Point(599, 237);
             this.lbl_UserID.Name = "lbl_UserID";
-            this.lbl_UserID.Size = new System.Drawing.Size(173, 46);
+            this.lbl_UserID.Size = new System.Drawing.Size(605, 115);
             this.lbl_UserID.TabIndex = 1;
-            this.lbl_UserID.Text = "User ID:";
+            this.lbl_UserID.Text = "User Name:";
             // 
             // lbl_Password
             // 
