@@ -45,6 +45,9 @@
             this.btn_AddUser = new System.Windows.Forms.Button();
             this.btn_UpdateUserDetails = new System.Windows.Forms.Button();
             this.btn_DeleteExistUser = new System.Windows.Forms.Button();
+            this.btn_CreateCampaign = new System.Windows.Forms.Button();
+            this.btn_UpdateExistCampaign = new System.Windows.Forms.Button();
+            this.btn_DeleteExistCampaign = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_UserManagement
@@ -99,30 +102,33 @@
             // 
             // btn_NewCampaign
             // 
-            this.btn_NewCampaign.Location = new System.Drawing.Point(653, 190);
+            this.btn_NewCampaign.Location = new System.Drawing.Point(653, 160);
             this.btn_NewCampaign.Name = "btn_NewCampaign";
             this.btn_NewCampaign.Size = new System.Drawing.Size(237, 108);
             this.btn_NewCampaign.TabIndex = 6;
             this.btn_NewCampaign.Text = "New Campaign";
             this.btn_NewCampaign.UseVisualStyleBackColor = true;
+            this.btn_NewCampaign.Click += new System.EventHandler(this.btn_NewCampaign_Click);
             // 
             // btn_UpdateCampaign
             // 
-            this.btn_UpdateCampaign.Location = new System.Drawing.Point(950, 190);
+            this.btn_UpdateCampaign.Location = new System.Drawing.Point(950, 160);
             this.btn_UpdateCampaign.Name = "btn_UpdateCampaign";
             this.btn_UpdateCampaign.Size = new System.Drawing.Size(237, 108);
             this.btn_UpdateCampaign.TabIndex = 7;
             this.btn_UpdateCampaign.Text = "Update Campaign";
             this.btn_UpdateCampaign.UseVisualStyleBackColor = true;
+            this.btn_UpdateCampaign.Click += new System.EventHandler(this.btn_UpdateCampaign_Click);
             // 
             // btn_DeleteCampaign
             // 
-            this.btn_DeleteCampaign.Location = new System.Drawing.Point(1257, 190);
+            this.btn_DeleteCampaign.Location = new System.Drawing.Point(1257, 150);
             this.btn_DeleteCampaign.Name = "btn_DeleteCampaign";
             this.btn_DeleteCampaign.Size = new System.Drawing.Size(237, 108);
             this.btn_DeleteCampaign.TabIndex = 8;
             this.btn_DeleteCampaign.Text = "Delete Campaign";
             this.btn_DeleteCampaign.UseVisualStyleBackColor = true;
+            this.btn_DeleteCampaign.Click += new System.EventHandler(this.btn_DeleteCampaign_Click);
             // 
             // txt_FirstTextbox
             // 
@@ -155,7 +161,7 @@
             // 
             this.lbl_FirstLabel.AutoSize = true;
             this.lbl_FirstLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_FirstLabel.Location = new System.Drawing.Point(917, 316);
+            this.lbl_FirstLabel.Location = new System.Drawing.Point(877, 316);
             this.lbl_FirstLabel.Name = "lbl_FirstLabel";
             this.lbl_FirstLabel.Size = new System.Drawing.Size(132, 46);
             this.lbl_FirstLabel.TabIndex = 12;
@@ -165,7 +171,7 @@
             // 
             this.lbl_SecondLabel.AutoSize = true;
             this.lbl_SecondLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SecondLabel.Location = new System.Drawing.Point(917, 481);
+            this.lbl_SecondLabel.Location = new System.Drawing.Point(877, 483);
             this.lbl_SecondLabel.Name = "lbl_SecondLabel";
             this.lbl_SecondLabel.Size = new System.Drawing.Size(132, 46);
             this.lbl_SecondLabel.TabIndex = 13;
@@ -175,7 +181,7 @@
             // 
             this.lbl_ThirdLabel.AutoSize = true;
             this.lbl_ThirdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ThirdLabel.Location = new System.Drawing.Point(917, 644);
+            this.lbl_ThirdLabel.Location = new System.Drawing.Point(877, 646);
             this.lbl_ThirdLabel.Name = "lbl_ThirdLabel";
             this.lbl_ThirdLabel.Size = new System.Drawing.Size(132, 46);
             this.lbl_ThirdLabel.TabIndex = 14;
@@ -203,7 +209,7 @@
             // 
             // btn_DeleteExistUser
             // 
-            this.btn_DeleteExistUser.Location = new System.Drawing.Point(925, 884);
+            this.btn_DeleteExistUser.Location = new System.Drawing.Point(934, 839);
             this.btn_DeleteExistUser.Name = "btn_DeleteExistUser";
             this.btn_DeleteExistUser.Size = new System.Drawing.Size(222, 69);
             this.btn_DeleteExistUser.TabIndex = 17;
@@ -211,11 +217,41 @@
             this.btn_DeleteExistUser.UseVisualStyleBackColor = true;
             this.btn_DeleteExistUser.Click += new System.EventHandler(this.btn_DeleteExistUser_Click);
             // 
+            // btn_CreateCampaign
+            // 
+            this.btn_CreateCampaign.Location = new System.Drawing.Point(925, 1007);
+            this.btn_CreateCampaign.Name = "btn_CreateCampaign";
+            this.btn_CreateCampaign.Size = new System.Drawing.Size(212, 72);
+            this.btn_CreateCampaign.TabIndex = 18;
+            this.btn_CreateCampaign.Text = "Create Campaign";
+            this.btn_CreateCampaign.UseVisualStyleBackColor = true;
+            // 
+            // btn_UpdateExistCampaign
+            // 
+            this.btn_UpdateExistCampaign.Location = new System.Drawing.Point(925, 1103);
+            this.btn_UpdateExistCampaign.Name = "btn_UpdateExistCampaign";
+            this.btn_UpdateExistCampaign.Size = new System.Drawing.Size(199, 88);
+            this.btn_UpdateExistCampaign.TabIndex = 19;
+            this.btn_UpdateExistCampaign.Text = "Update Campaign";
+            this.btn_UpdateExistCampaign.UseVisualStyleBackColor = true;
+            // 
+            // btn_DeleteExistCampaign
+            // 
+            this.btn_DeleteExistCampaign.Location = new System.Drawing.Point(934, 960);
+            this.btn_DeleteExistCampaign.Name = "btn_DeleteExistCampaign";
+            this.btn_DeleteExistCampaign.Size = new System.Drawing.Size(209, 85);
+            this.btn_DeleteExistCampaign.TabIndex = 20;
+            this.btn_DeleteExistCampaign.Text = "Delete Campaign";
+            this.btn_DeleteExistCampaign.UseVisualStyleBackColor = true;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1769, 1134);
+            this.ClientSize = new System.Drawing.Size(1769, 1203);
+            this.Controls.Add(this.btn_DeleteExistCampaign);
+            this.Controls.Add(this.btn_UpdateExistCampaign);
+            this.Controls.Add(this.btn_CreateCampaign);
             this.Controls.Add(this.btn_DeleteExistUser);
             this.Controls.Add(this.btn_UpdateUserDetails);
             this.Controls.Add(this.btn_AddUser);
@@ -259,5 +295,8 @@
         private System.Windows.Forms.Button btn_AddUser;
         private System.Windows.Forms.Button btn_UpdateUserDetails;
         private System.Windows.Forms.Button btn_DeleteExistUser;
+        private System.Windows.Forms.Button btn_CreateCampaign;
+        private System.Windows.Forms.Button btn_UpdateExistCampaign;
+        private System.Windows.Forms.Button btn_DeleteExistCampaign;
     }
 }

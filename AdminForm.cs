@@ -42,6 +42,13 @@ namespace VotingApp_1._0
             btn_NewCampaign.Hide();
             btn_UpdateCampaign.Hide();
             btn_DeleteCampaign.Hide();
+            //add campaign
+            btn_CreateCampaign.Hide();
+            //
+            btn_UpdateExistCampaign.Hide();
+
+            //
+            btn_DeleteExistCampaign.Hide();
 
             //Labels and textboxes
             lbl_FirstLabel.Hide();
@@ -80,6 +87,12 @@ namespace VotingApp_1._0
             lbl_FirstLabel.Text = "User Name";
             lbl_SecondLabel.Text = "Password";
             lbl_ThirdLabel.Text = "User Type";
+        }
+        private void CampaignLabels(object sender, EventArgs e)
+        {
+            lbl_FirstLabel.Text = "Campaign Name";
+            lbl_SecondLabel.Text = "Campaign Description";
+            lbl_ThirdLabel.Text = "Campaign Status";
         }
         private void btn_UserManagement_Click(object sender, EventArgs e)
         {
@@ -175,6 +188,42 @@ namespace VotingApp_1._0
             {
 
             }
+        }
+
+        private void btn_NewCampaign_Click(object sender, EventArgs e)
+        {
+            AdminForm_Load(sender, e);
+            ShowCampaignButtons(sender, e);
+            ShowLabelsTextboxes(sender, e);
+            CampaignLabels(sender, e);
+            lbl_ThirdLabel.Hide();
+            txt_ThirdTextbox.Hide();
+
+            btn_CreateCampaign.Show();
+        }
+
+        private void btn_UpdateCampaign_Click(object sender, EventArgs e)
+        {
+            AdminForm_Load(sender, e);
+            ShowCampaignButtons(sender, e);
+            ShowLabelsTextboxes(sender, e);
+            CampaignLabels(sender, e);
+
+            btn_UpdateExistCampaign.Show();
+        }
+
+        private void btn_DeleteCampaign_Click(object sender, EventArgs e)
+        {
+            AdminForm_Load(sender, e);
+            ShowCampaignButtons(sender, e);
+            ShowLabelsTextboxes(sender, e);
+
+            lbl_FirstLabel.Text = "Campaign ID";
+            lbl_SecondLabel.Text = "Campaign Name";
+            lbl_ThirdLabel.Hide();
+            txt_ThirdTextbox.Hide();
+
+            btn_DeleteExistCampaign.Show();
         }
     }
 }
