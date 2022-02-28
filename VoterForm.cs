@@ -21,7 +21,6 @@ namespace VotingApp_1._0
 
         private void VoterForm_Load(object sender, EventArgs e)
         {
-            LoadDataCandidate();
             data_Candidate.Hide();
             lbl_SelectCandidate.Hide();
             lbl_Candidate.Hide();
@@ -109,11 +108,14 @@ namespace VotingApp_1._0
             btn_Vote.Show();
             lbl_UserID.Show();
             txt_UserID.Show();
+            //Loads the data grids. 
             LoadDataCandidate();
+            LoadDataCampaign();
         }
 
         private void btn_Vote_Click(object sender, EventArgs e)
         {
+            //Adds the vote to the database. 
             string str_Query = "Insert into Vote(VoterID, Campaign, Candidate) values ('" + txt_UserID.Text + "','" + txt_Campaign.Text + "', '" + txt_Candidate.Text + "' ";
             ExecuteQuery(str_Query);
         }

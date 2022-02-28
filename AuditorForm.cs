@@ -21,13 +21,14 @@ namespace VotingApp_1._0
 
         private void AuditorForm_Load(object sender, EventArgs e)
         {
+            //Hides components on form load.
             data_Candidate.Hide();
             lbl_SelectCandidate.Hide();
             lbl_Candidate.Hide();
             txt_Candidate.Hide();
             btn_TotalCandidate.Hide();
             txt_TotalCandidate.Hide();
-            LoadDataCampaign();
+            
         }
         private void ExecuteQuery(string str_Query)
         {
@@ -95,6 +96,7 @@ namespace VotingApp_1._0
             btn_TotalCandidate.Show();
             txt_TotalCandidate.Show();
             LoadDataCandidate();
+            LoadDataCampaign();
 
             using (SQLiteConnection sqlConn = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
             {
@@ -106,6 +108,7 @@ namespace VotingApp_1._0
                 DataTable dataTable = new DataTable();
                 sqlDa.Fill(dataTable);
                 SQLiteDataReader sqlDr = sqlCmd.ExecuteReader();
+                //counts the votes
                 txt_TotalCampaignVotes.Text = dataTable.Rows.Count.ToString();
                 sqlDr.Close();
                 sqlConn.Close();
@@ -135,7 +138,8 @@ namespace VotingApp_1._0
                 DataTable dataTable = new DataTable();
                 sqlDa.Fill(dataTable);
                 SQLiteDataReader sqlDr = sqlCmd.ExecuteReader();
-                txt_TotalCampaignVotes.Text = dataTable.Rows.Count.ToString();
+                //counts sepcific count for candidates. 
+                txt_TotalCandidate.Text = dataTable.Rows.Count.ToString();
                 sqlDr.Close();
                 sqlConn.Close();
             }
