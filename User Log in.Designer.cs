@@ -55,7 +55,7 @@
             this.lbl_UserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_UserID.Location = new System.Drawing.Point(599, 237);
             this.lbl_UserID.Name = "lbl_UserID";
-            this.lbl_UserID.Size = new System.Drawing.Size(605, 115);
+            this.lbl_UserID.Size = new System.Drawing.Size(242, 46);
             this.lbl_UserID.TabIndex = 1;
             this.lbl_UserID.Text = "User Name:";
             // 
@@ -84,6 +84,7 @@
             this.txt_Password.Location = new System.Drawing.Point(607, 467);
             this.txt_Password.Multiline = true;
             this.txt_Password.Name = "txt_Password";
+            this.txt_Password.PasswordChar = '*';
             this.txt_Password.Size = new System.Drawing.Size(402, 70);
             this.txt_Password.TabIndex = 4;
             // 
