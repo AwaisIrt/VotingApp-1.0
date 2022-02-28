@@ -29,41 +29,43 @@ namespace VotingApp_1._0
         private void btn_SignIn_Click(object sender, EventArgs e)
         {
             string str_UserName, str_Password, str_UserType;
-
+            //Assigns the textbox to string variables.
             str_UserName = txt_Username.Text;
             str_Password = txt_Password.Text;
 
-
-
+            //If the User has not inpput any values, this will give message to enter values. 
             if (txt_Password.Text == "" || txt_Password.Text == "")
             {
                 MessageBox.Show("Input User ID and Password", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
+                //This uses the connection string to create a connection. Used 'using' to ensure all the connection are opened and closed within so they don't stay open.
+                //This can cause locking of the Database. 
                 using (SQLiteConnection sqlConn = new SQLiteConnection(SQLiteDataAccess.LoadConnectionString()))
                 {
+                    //Opens the connection. 
                     sqlConn.Open();
+                    //the query that will be used to select the username and password. 
                     string str_Query = " SELECT UserName, Password, UserType FROM User WHERE UserName = @str_UserName AND Password = @str_Password";
-
+                    
+                    //this creates a command to be used.
                     SQLiteCommand sqlCmd = new SQLiteCommand(str_Query, sqlConn);
+                    //Parameters that need to be used indicate where th values are coming from. 
                     sqlCmd.Parameters.AddWithValue("@str_UserName", txt_Username.Text);
                     sqlCmd.Parameters.AddWithValue("@str_Password", txt_Password.Text);
+                    
                     SQLiteDataAdapter sqlDa = new SQLiteDataAdapter(sqlCmd);
                     DataTable dataTable = new DataTable();
+                    //fills a table using data adapter
                     sqlDa.Fill(dataTable);
+                    //reads the data using command. 
                     SQLiteDataReader sqlDr = sqlCmd.ExecuteReader();
 
 
                     if (dataTable.Rows.Count > 0)
                     {
-                        str_UserName = txt_Username.Text;
-                        str_Password = txt_Password.Text;
-                        //Change to form.
-                        // MessageBox.Show("Welcome" + " " + str_UserName);
-
-
-
+                        //Reads the calues using data reader compares them to see which form needs to be opened depending on the user. 
                         if (sqlDr.Read())
                         {
                             str_UserType = sqlDr.GetValue(2).ToString();
@@ -90,13 +92,14 @@ namespace VotingApp_1._0
                                 }
                             }
                         }
+                        //closes the reader connection.
                         sqlDr.Close();
 
                     }
                     else
                     {
-                        //Show Error
-                        MessageBox.Show("Your user ID or password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //Shows Error if username and password don't match. 
+                        MessageBox.Show("Your username or password is incorrect.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         //Clears the textbox so the user can enter User ID and Password again.
                         txt_Username.Clear();
@@ -105,7 +108,7 @@ namespace VotingApp_1._0
                         //Focuses on User ID.
                         txt_Username.Focus();
                     }
-
+                    //closes the connection to the database. 
                     sqlConn.Close();
                 }
             

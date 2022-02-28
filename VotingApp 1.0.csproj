@@ -76,7 +76,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLiteDataAccess.cs" />
-    <Compile Include="User.cs" />
     <Compile Include="VoterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,9 +114,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Content Include="VotingDB.db">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="VotingDB1.0.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
