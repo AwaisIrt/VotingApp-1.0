@@ -27,15 +27,15 @@ namespace VotingApp
            }
        
         }
-        public static void RegisterUser(User UserLogin)
+        public static void RegisterUser(string str_query)
         {
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
-                cnn.Execute("insert into User(FirstName, LastName) values (@FirstName, @LastName)", UserLogin);
+                cnn.Execute("'"+str_query+"'");
             }
         }
-        
         */
+        
         public static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
